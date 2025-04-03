@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Scheduling Algorithm Simulator</title>
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+    <div>
+        <h1>Disk Scheduling Algorithm Simulator</h1>
+        <p>Disk scheduling algorithms are used to allocate the
+            services to the I/O requests on the disk. Since seeking
+            disk requests is time consuming, disk scheduling
+            algorithms try to minimize this latency.
+            <br><br>
+            If desired disk drive or controller is available, request is served immediately. If busy, new request for service will be placed in the queue of pending requests. When one
+            request is completed, the Operating System has to choose
+            which pending request to service next. The OS relies on
+            the type of algorithm it needs when dealing and choosing
+            what particular disk request is to be processed next. The
+            objective of using these algorithms is keeping Head
+            movements to the amount as possible. The less the head
+            to move, the faster the seek time will be. To see how it
+            works, the different disk scheduling algorithms will be
+            discussed and examples are also provided for better
+            understanding on these different algorithms. </p>
+    </div>
+    <header>
+        <video width="100%" height="240" controls autoplay>
+            <source src="disk_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </header>
+    <diV>
+        <h1>Disk Scheduling</h1>
+        <p>In a movable-head disk, where there is only one access
+            arm to service all the disk tracks, the time spent by the
+            Read and Write (R/W) head to move from one track to
+            another is called Seek Time. This is differing from a
+            fixed-head disk wherein there is an assigned arm for
+            every track. Seek time can be compared to the movement
+            of a space shuttle from one planetary orbit to another. There are two kinds of seek either inward or outward seek depending on the current location of the R/W head. Moving towards the outer portion of the disk corresponds to an outward seek while moving towards the center of the disk considered an inward seek.
+            <br><br>
+            Once it reaches the desired track, the disk will rotate to find the block of data to be accessed and position it before the R/W head. The time spent in moving the disk from undesired block to desired block is known as   rotational delay or latency time. Rotational delay positions the tip of the R/W head at the beginning of the sector where the data is to be read or written.
+            <br><br>
+            As soon as the R/W head is positioned at the beginning of the data block, it is electrically switched on in line with the preparation for read or writes function. Once it is switched on, that’s the time the read or write functions begin. 
+            <br><br>
+            Finally, the disk will again rotate in order for the data block to get ahead of under read/write. The data is then read from or written to the disk; consequently it is called transfer time. </p>
+    </diV>
+    <div id="my">
+        <h1>Disk Structure</h1>
+        <span>
+        <img src="disk_picture.png" width="500px" height="500px" alt="disk_diagram">
+        </span>
+        <span>
+        <p>Each disk platter has a flat circular shape, like a CD. Common platter diameters range from 1.8 to 3.5 inches. The two surfaces of a platter are covered with a magnetic material. We store information by recording it magnetically on the platters, and we read information by detecting the magnetic pattern on the platters.
+            <br><br>
+            A read-write head “flies” just above each surface of every platter. The heads are attached to a disk arm that moves all the heads as a unit. The surface of a platter is logically divided into circular tracks, which are subdivided into sectors. The set of tracks at a given arm position make up a cylinder. There may be thousands of concentric cylinders in a disk drive, and each track may contain hundreds of sectors. Each sector has a fixed size and is the smallest unit of transfer. The sector size was commonly 512 bytes until around 2010. At that point, many manufacturers start migrating to 4KB sectors. The storage capacity of common disk drives is measured in gigabytes and terabytes. 
+            <br><br>
+            A disk drive motor spins it at high speed. Most drives rotate 60 to 250 times per second, specified in terms of rotations per minute (RPM). Common drives spin at 5,400, 7,200, 10,000, and 15,000 RPM. Some drives power down when not in use and spin up upon receiving an I/O request. Rotation speed relates to transfer rates. The transfer rate is the rate at which data flow between the drive and the computer. Another performance aspect, the positioning time, or random-access time, consists of two parts: the time necessary to move the disk arm to the desired cylinder, called the seek time, and the time necessary for the desired sector to rotate to the disk head, called the rotational latency. Typical disks can transfer tens to hundreds of megabytes of data per second, and they have seek times and rotational latencies of several milliseconds. They increase performance by having DRAM buffers in the drive controller.
+            <br><br>
+            The disk head flies on an extremely thin cushion (measured in microns) of air or another gas, such as helium, and there is a danger that the head will make contact with the disk surface. Although the disk platters are coated with a thin protective layer, the head will sometimes damage the magnetic surface. This accident is called a head crash. A head crash normally cannot be repaired; the entire disk must be replaced, and the data on the disk are lost unless they were backed up to other storage or RAID protected.
+            <br><br>
+            HDDs are sealed units, and some chassis that hold HDDs allow their removal without shutting down the system or storage chassis. This is helpful when a system needs more storage than can be connected at a given time or when it is necessary to replace a bad drive with a working one. Other types of storage media are also removable, including CDs, DVDs, and Blu-ray discs.</p>
+        </span>
+        </div>
+
+    <div>
+        <p>There are several Disk Several Algorithms. They are as follow: </p>
+        <ul>
+            <span>
+            <button><a href="fcfs.html">First Come First Served Algorithm</a></button>
+            <button><a href="c_look.html">Circular-LOOK Algorithm</a></button>
+            <button><a href="c_scan.html">Circular SCAN Algorithm</a></button>
+            </span>
+            <span>
+            <button><a href="look.html">LOOK Algorithm</a></button>
+            <button><a href="scan.html">SCAN Algorithm</a></button>
+            <button><a href="sstf.html">Shortest Seek Time First Algorithm</a></button>
+            </span>
+        </ul>
+    </div>
+</body>
+</html>
